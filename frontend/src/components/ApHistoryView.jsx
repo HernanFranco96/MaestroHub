@@ -44,9 +44,8 @@ export default function ApHistoryView() {
     async function fetchApDetail() {
       try {
         setLoading(true);
-        const response = await fetch(
-          `http://192.168.131.141:3000/api/ap/${ip}`,
-        );
+        const apiUrl = import.meta.env.VITE_API_URL || "/api";
+        const response = await fetch(`${apiUrl}/ap/${ip}`);
         const result = await response.json();
 
         if (result.success) {

@@ -61,7 +61,7 @@ export default function Dashboard() {
   };
 
   useEffect(() => {
-    const socket = io("http://192.168.131.141:3000", {
+    const socket = io(import.meta.env.VITE_SOCKET_URL || undefined, {
       transports: ["websocket"],
       reconnection: true,
       reconnectionAttempts: Infinity,

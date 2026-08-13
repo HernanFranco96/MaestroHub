@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://192.168.131.141:3000/api",
+  baseURL: import.meta.env.VITE_API_URL || "/api",
 });
 
 export const getDevices = async () => {
